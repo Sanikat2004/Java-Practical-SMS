@@ -1,10 +1,10 @@
 class Student{
-  String name;
-  String gender;
-  String dob;
-  String branch;
-  int year;
-  String bloodgrp;
+ private String name;
+ private String gender;
+ private String dob;
+ private String branch;
+ private int year;
+ public String bloodgrp;
   Student(String name,String gender,String dob,String branch, int year,String bloodgrp)
   {
     this.name=name;
@@ -14,6 +14,31 @@ class Student{
     this.year=year;
     this.bloodgrp=bloodgrp;
   }
+  public String getname()
+  {
+    return name;
+  }
+  public String getgender()
+  {
+    return gender;
+  }
+  public String getdob()
+  {
+    return dob;
+  }
+  public String getbranch()
+  {
+    return branch;
+  }
+  public void setbranch(String branch)
+  {
+    this.branch=branch;
+  }  
+  public int getyear()
+  {
+    return year;
+  }
+  
 }
 class Regular_student extends Student{
    static int count;
@@ -25,10 +50,10 @@ class Regular_student extends Student{
      this.registration_no=generateRegNo();
    }
    String generateRegNo(){
-     return year+"B"+branch.toUpperCase().substring(0,2)+String.format("%03d",count);
+     return getyear()+"B"+getbranch().toUpperCase().substring(0,2)+String.format("%03d",count);
     }
     public String toString(){
-     return "Name:"+name+"\nGender:"+gender+"\nDOB:"+dob+"\nBranch:"+branch+"\nYear:"+year+"\nBloodgrp:"+bloodgrp+"\nRegistration No. :"+registration_no;
+     return "Name:"+getname()+"\nGender:"+getgender()+"\nDOB:"+getdob()+"\nBranch:"+getbranch()+"\nYear:"+getyear()+"\nBloodgrp:"+bloodgrp+"\nRegistration No. :"+registration_no;
      }
 }
 class DSY_student extends Student{
@@ -41,10 +66,10 @@ class DSY_student extends Student{
      this.registration_no=generateRegNo();
    }
    String generateRegNo(){
-     return year+"B"+branch.toUpperCase().substring(0,2)+String.format("%03d",count);
+     return getyear()+"B"+getbranch().toUpperCase().substring(0,2)+String.format("%03d",count);
     }
     public String toString(){
-     return "Name:"+name+"\nGender:"+gender+"\nDOB:"+dob+"\nBranch:"+branch+"\nYear:"+year+"\nBloodgrp:"+bloodgrp+"\nRegistration No. :"+registration_no;
+     return "Name:"+getname()+"\nGender:"+getgender()+"\nDOB:"+getdob()+"\nBranch:"+getbranch()+"\nYear:"+getyear()+"\nBloodgrp:"+bloodgrp+"\nRegistration No. :"+registration_no;
      }
 }
 class SMS{
@@ -60,7 +85,4 @@ class SMS{
     System.out.println(dsy);
   }
 }  
-    
-    
-        
     
